@@ -8,11 +8,21 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    storage[someInstance.stackSize] = value;
+
     someInstance.stackSize += 1;
   };
 
   someInstance.pop = function() {
-    someInstance.stackSize -= 1;
+    const lastEl = delete storage[someInstance.stackSize];
+
+    if (someInstance.stackSize > 0) {
+      someInstance.stackSize -= 1;
+    } else {
+      someInstance.stackSize = 0;
+    }
+
+    return lastEl;
   };
 
   someInstance.size = function() {
