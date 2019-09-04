@@ -14,7 +14,9 @@ var Stack = function() {
   };
 
   someInstance.pop = function() {
-    const lastEl = delete storage[someInstance.stackSize];
+    const lastEl = storage[someInstance.stackSize - 1];
+
+    delete storage[someInstance.stackSize - 1];
 
     if (someInstance.stackSize > 0) {
       someInstance.stackSize -= 1;
