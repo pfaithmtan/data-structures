@@ -1,6 +1,8 @@
 var Queue = function() {
   var someInstance = {};
 
+  someInstance.queueSize = 0;
+
   // Use an object with numeric keys to store values
   var storage = {};
 
@@ -13,6 +15,7 @@ var Queue = function() {
   };
 
   someInstance.size = function() {
+    return someInstance.queueSize;
   };
 
   return someInstance;
