@@ -25,9 +25,6 @@ var Queue = function() {
     if (someInstance.queueSize > 0) {
       someInstance.queueSize -= 1;
       someInstance.firstIdx += 1;
-    } else {
-      someInstance.queueSize = 0;
-      someInstance.firstIdx = 0;
     }
 
     return firstEl;
