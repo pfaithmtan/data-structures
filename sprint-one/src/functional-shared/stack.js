@@ -29,8 +29,6 @@ var stackMethods = {
 
     if (this.stackSize > 0) {
       this.stackSize -= 1;
-    } else {
-      this.stackSize = 0;
     }
 
     return lastEl;
@@ -40,5 +38,4 @@ var stackMethods = {
     return this.stackSize;
   }
 };
-
 
