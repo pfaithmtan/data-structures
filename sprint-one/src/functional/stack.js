@@ -20,8 +20,6 @@ var Stack = function() {
 
     if (someInstance.stackSize > 0) {
       someInstance.stackSize -= 1;
-    } else {
-      someInstance.stackSize = 0;
     }
 
     return lastEl;
