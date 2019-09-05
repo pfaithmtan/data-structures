@@ -7,15 +7,27 @@ class Queue {
     this.lastIdx = 0;
   }
 
-  enqueue() {
+  enqueue(value) {
+    this[this.lastIdx] = value;
 
+    this.lastIdx += 1;
+    this.queueSize += 1;
   }
 
   dequeue() {
+    const firstEl = this[this.firstIdx];
 
+    delete this[this.firstIdx];
+
+    if (this.queueSize > 0) {
+      this.queueSize -= 1;
+      this.firstIdx += 1;
+    }
+
+    return firstEl;
   }
 
   size() {
-
+    return this.queueSize;
   }
 }
