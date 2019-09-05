@@ -19,15 +19,28 @@ var extend = function(to, from) {
 
 var queueMethods = {
   enqueue: function(value) {
+    this[this.lastIdx] = value;
 
+    this.lastIdx += 1;
+    this.queueSize += 1;
   },
 
   dequeue: function() {
+    const firstEl = this[this.firstIdx];
 
+    delete this[this.firstIdx];
+
+    if (this.queueSize > 0) {
+      this.queueSize -= 1;
+    }
+
+    this.firstIdx += 1;
+
+    return firstEl;
   },
 
   size: function() {
-
+    return this.queueSize;
   }
 };
 
