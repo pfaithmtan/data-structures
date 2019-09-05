@@ -6,7 +6,9 @@ class Stack {
   }
 
   push(value) {
+    this[this.stackSize] = value;
 
+    this.stackSize += 1;
   }
 
   pop() {
