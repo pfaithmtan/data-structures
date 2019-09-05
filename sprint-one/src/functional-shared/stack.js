@@ -23,7 +23,17 @@ var stackMethods = {
   },
 
   pop: function() {
+    const lastEl = this[this.stackSize - 1];
 
+    delete this[this.stackSize - 1];
+
+    if (this.stackSize > 0) {
+      this.stackSize -= 1;
+    } else {
+      this.stackSize = 0;
+    }
+
+    return lastEl;
   },
 
   size: function() {
