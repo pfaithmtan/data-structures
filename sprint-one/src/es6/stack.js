@@ -12,7 +12,15 @@ class Stack {
   }
 
   pop() {
+    const lastEl = this[this.stackSize - 1];
 
+    delete this[this.stackSize - 1];
+
+    if (this.stackSize > 0) {
+      this.stackSize -= 1;
+    }
+
+    return lastEl;
   }
 
   size() {
