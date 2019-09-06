@@ -3,7 +3,9 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = null;  // fix me
+  newTree.children = [];
+  newTree.addChild = treeMethods.addChild;
+  newTree.contains = treeMethods.contains;
 
   return newTree;
 };
