@@ -56,4 +56,8 @@ var getIndexBelowMaxForKey = function(str, max) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ LimitedArray.get(): O(1)
+ LimitedArray.set(): O(1)
+ LimitedArray.each(): O(n) where n === this.limit
+ checkLimit: O(1)
  */
